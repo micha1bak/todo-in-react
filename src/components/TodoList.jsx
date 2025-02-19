@@ -2,11 +2,18 @@ import { TodoCard } from './TodoCard'
 
 export function TodoList(props) {
   const { todos } = props;
-  const tabs = 'All'
+  const tab = 'All'
+
+  // filterTodosList() checks if TodoCard should be in each tab
+  const filterTodosList = function() {
+    if (tab === 'All') return todos;
+    if (tab === 'Completed') return todos.filter(val => val.complete);
+    return todos.filter(val => !val.complete);
+  }
 
   return (
     <>
-      {todos.map((todo, todoIndex) => {
+      {filterTodosList().map((todo, todoIndex) => {
         return (
           <TodoCard key={todoIndex} todoIndex={todoIndex} {...props} />
         )
