@@ -5,16 +5,14 @@ import { TodoList } from "./components/TodoList"
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <>
       <Header />
       <Tabs />
       <TodoList />
       <TodoInput />
-
-    </div>
+    </>
   )
 }
 
