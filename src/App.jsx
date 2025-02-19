@@ -15,7 +15,11 @@ function App() {
   }
 
   function handleCompleteTodo(index) {
-    let newTodoList = [];
+    let newTodoList = [...todos];
+    let completedTodo = todos[index];
+    completedTodo.complete = true;
+    newTodoList[index] = completedTodo;
+    setTodos(newTodoList);
   }
 
   function handleDeleteTodo(index) {
@@ -36,6 +40,7 @@ function App() {
       />
       <TodoList 
         handleDeleteTodo={handleDeleteTodo} 
+        handleCompleteTodo={handleCompleteTodo}
         selectedTab={selectedTab} 
         todos={todos}
       />
