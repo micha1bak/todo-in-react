@@ -14,7 +14,12 @@ export function Tabs(props) {
         }
 
         return (
-          <button key={tabIndex} className={'tab-button ' + (tab === selectedTab ? 'tab-selected' : '')}>
+          <button key={tabIndex} 
+            className={'tab-button ' + (tab === selectedTab ? 'tab-selected' : '')}
+            onClick={() => {
+              setSelectedTab(tab);
+            }}
+          >
             <h4>{tab} <span>({numOfTasks()})</span></h4>
           </button>
         )
