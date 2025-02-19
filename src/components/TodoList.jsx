@@ -15,7 +15,7 @@ export function TodoList(props) {
     <>
       {filterTodosList().map((todo, todoIndex) => {
         return (
-          <TodoCard key={todoIndex} todoIndex={todoIndex} {...props} />
+          <TodoCard key={todoIndex} todo={todo} />
         )
       })}
     </>
