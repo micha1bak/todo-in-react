@@ -17,7 +17,7 @@ export function TodoList(props) {
           <TodoCard 
             key={todoIndex} 
             todo={todo} 
-            todoIndex={todoIndex}
+            todoIndex={todos.findIndex(val => val.input == todo.input)}
             handleDeleteTodo={handleDeleteTodo}
             handleCompleteTodo={handleCompleteTodo}
           />
