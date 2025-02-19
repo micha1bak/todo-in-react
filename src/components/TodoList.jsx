@@ -1,5 +1,16 @@
-export function TodoList() {
+import { TodoCard } from './TodoCard'
+
+export function TodoList(props) {
+  const { todos } = props;
+  const tabs = 'All'
+
   return (
-    <div></div>
+    <>
+      {todos.map((todo, todoIndex) => {
+        return (
+          <TodoCard key={todoIndex} todoIndex={todoIndex} {...props} />
+        )
+      })}
+    </>
   )
 }
