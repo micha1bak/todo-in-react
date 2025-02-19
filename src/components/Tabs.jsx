@@ -1,11 +1,21 @@
-export function Tabs() {
-  const tabs = ['All', 'Open', 'Completed']
+export function Tabs(props) {
+  const { todos } = props;
+
+  const tabs = ['All', 'Open', 'Completed'];
   return (
     <nav className="tab-container">
       {tabs.map((tab, tabIndex) => {
+        
+        // numOfTasks() calculates the number of tasks in each tab 
+        const numOfTasks = function() {
+          if (tab === 'All') return todos.length;
+          if (tab === 'Open') return todos.filter(val => !val.complete).length;
+          return todos.filter(val => val.complete).length;
+        }
+
         return (
           <button key={tabIndex} className="tab-button">
-            <h4>{tab} <span>(0)</span></h4>
+            <h4>{tab} <span>({numOfTasks()})</span></h4>
           </button>
         )
       })}
