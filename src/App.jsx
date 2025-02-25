@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
 
-  const [todos, setTodos] = useState([{ input: 'Hej Nelka ;)', complete: false }]);
+  const [todos, setTodos] = useState([{ input: 'Your first todo', complete: false }]);
   const [selectedTab, setSelectedTab] = useState('All');
 
   function handleAddTodo(newTodo) {

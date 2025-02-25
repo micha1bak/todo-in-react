@@ -22,6 +22,10 @@ h1 {
   overflow-x: auto;
 }
 
+.tab-container::-webkit-scrollbar {
+  display: none;
+}
+
 .tab-button {
   border: none;
   box-shadow: none;
